@@ -104,17 +104,17 @@ body{background:var(--bg);font-family:"Spline Sans",sans-serif;color:var(--text)
 .compare-verdict{background:var(--bg);border-top:1px solid var(--border);padding:18px 28px;font-size:13px;color:var(--text2);line-height:1.65;font-style:italic;}
 
 /* SPOTLIGHT */
-.spotlight{background:linear-gradient(135deg,#1e3a8a,#1e293b);border-radius:14px;padding:36px 40px;position:relative;overflow:hidden;color:white;}
-.spotlight::before{content:"";position:absolute;top:-40px;right:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(50,96,150,.2) 0%,transparent 70%);}
+.spotlight{background:white;border:2px solid var(--navy);border-radius:14px;padding:36px 40px;position:relative;overflow:hidden;color:var(--navy);}
+.spotlight::before{content:"";position:absolute;top:-40px;right:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(15,23,42,.05) 0%,transparent 70%);}
 .spotlight-tag{font-family:"Spline Sans Mono",monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--michael);margin-bottom:10px;display:block;position:relative;z-index:2;}
-.spotlight h3{font-family:"Spline Sans",sans-serif;font-size:24px;color:white;margin-bottom:8px;position:relative;z-index:2;}
-.spotlight-sub{font-size:13px;color:#94a3b8;margin-bottom:24px;font-weight:300;max-width:500px;line-height:1.65;position:relative;z-index:2;}
+.spotlight h3{font-family:"Spline Sans",sans-serif;font-size:24px;color:var(--navy);margin-bottom:8px;position:relative;z-index:2;}
+.spotlight-sub{font-size:13px;color:var(--text2);margin-bottom:24px;font-weight:300;max-width:500px;line-height:1.65;position:relative;z-index:2;}
 .spotlight-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;position:relative;z-index:2;}
-.spotlight-item{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:9px;padding:14px;}
+.spotlight-item{background:rgba(15,23,42,.05);border:1px solid rgba(15,23,42,.12);border-radius:9px;padding:14px;}
 .spotlight-item-num{font-family:"Spline Sans Mono",monospace;font-size:20px;font-weight:500;color:var(--michael);margin-bottom:5px;}
-.spotlight-item-title{font-size:12px;font-weight:600;color:white;margin-bottom:4px;}
-.spotlight-item p{font-size:11px;color:#94a3b8;line-height:1.55;}
-.spotlight-note{margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);font-size:12px;color:#42425C;font-style:italic;position:relative;z-index:2;}
+.spotlight-item-title{font-size:12px;font-weight:600;color:var(--navy);margin-bottom:4px;}
+.spotlight-item p{font-size:11px;color:var(--slate);line-height:1.55;}
+.spotlight-note{margin-top:18px;padding-top:16px;border-top:1px solid var(--border);font-size:12px;color:var(--text2);font-style:italic;position:relative;z-index:2;}
 
 /* FRAMEWORK MAP */
 .framework-map{background:white;border:1px solid var(--border);border-radius:14px;overflow:hidden;}
@@ -536,26 +536,26 @@ strong{color:var(--navy);font-weight:500;}
   <p class="section-sub" style="color:var(--text2);">Michael&#8217;s approach as a teacher-coach is worth examining separately. It&#8217;s the one most directly applicable to anyone trying to help others navigate AI in a wide variety of professional settings with different audiences.</p>
   <div class="spotlight fade-in">
     <span class="spotlight-tag">The Coach Model</span>
-    <h3 style="color:white;">Don't Impose a New Framework — Surface the One They Already Have</h3>
-    <p class="spotlight-sub" style="color:white;">With 20 years of experience, Michael had developed a specific way of working with teachers that mirrors what the best AI adoption looks like in any organization. He wasn't trying to revolutionize anyone's practice. He was helping them see what they already did well and point it in a slightly better direction.</p>
+    <h3>Don&#8217;t Impose a New Framework — Surface the One They Already Have</h3>
+    <p class="spotlight-sub">With 20 years of experience, Michael had developed a specific way of working with teachers that mirrors what the best AI adoption looks like in any organization. He wasn&#8217;t trying to revolutionize anyone&#8217;s practice. He was helping them see what they already did well and point it in a slightly better direction.</p>
     <div class="spotlight-grid">
       <div class="spotlight-item">
-        <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:6px;display:block;"><circle cx="16" cy="16" r="15" fill="none" stroke="white" stroke-width="2"/><text x="16" y="22" font-family="Spline Sans,sans-serif" font-size="16" font-weight="700" fill="white" text-anchor="middle">1</text></svg>
-        <div class="spotlight-item-title" style="color:white;">Start with existing practice</div>
-        <p style="color:white;">He observed what teachers already did and named what was working. No new systems required before you begin. "A lot of the practices they're already doing."</p>
+        <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:6px;display:block;"><circle cx="16" cy="16" r="15" fill="none" stroke="#0f172a" stroke-width="2"/><text x="16" y="22" font-family="Spline Sans,sans-serif" font-size="16" font-weight="700" fill="#0f172a" text-anchor="middle">1</text></svg>
+        <div class="spotlight-item-title">Start with existing practice</div>
+        <p>He observed what teachers already did and named what was working. No new systems required before you begin. &#8220;A lot of the practices they&#8217;re already doing.&#8221;</p>
       </div>
       <div class="spotlight-item">
-        <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:6px;display:block;"><circle cx="16" cy="16" r="15" fill="none" stroke="white" stroke-width="2"/><text x="16" y="22" font-family="Spline Sans,sans-serif" font-size="16" font-weight="700" fill="white" text-anchor="middle">2</text></svg>
-        <div class="spotlight-item-title" style="color:white;">Make direct connections</div>
-        <p style="color:white;">"I just have to point out what they're doing to each other." He didn't lecture. He reflected back what was already visible, and connected it to the shifting landscape around them.</p>
+        <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:6px;display:block;"><circle cx="16" cy="16" r="15" fill="none" stroke="#0f172a" stroke-width="2"/><text x="16" y="22" font-family="Spline Sans,sans-serif" font-size="16" font-weight="700" fill="#0f172a" text-anchor="middle">2</text></svg>
+        <div class="spotlight-item-title">Make direct connections</div>
+        <p>&#8220;I just have to point out what they&#8217;re doing to each other.&#8221; He didn&#8217;t lecture. He reflected back what was already visible, and connected it to the shifting landscape around them.</p>
       </div>
       <div class="spotlight-item">
-        <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:6px;display:block;"><circle cx="16" cy="16" r="15" fill="none" stroke="white" stroke-width="2"/><text x="16" y="22" font-family="Spline Sans,sans-serif" font-size="16" font-weight="700" fill="white" text-anchor="middle">3</text></svg>
-        <div class="spotlight-item-title" style="color:white;">Sit with Michael's question</div>
-        <p style="color:white;">If a student uses AI and the output earns full marks — but the teacher can't see the input — what is actually being assessed? Is the grade measuring the student's thinking, or the tool's output?</p>
+        <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:6px;display:block;"><circle cx="16" cy="16" r="15" fill="none" stroke="#0f172a" stroke-width="2"/><text x="16" y="22" font-family="Spline Sans,sans-serif" font-size="16" font-weight="700" fill="#0f172a" text-anchor="middle">3</text></svg>
+        <div class="spotlight-item-title">Sit with Michael&#8217;s question</div>
+        <p>If a student uses AI and the output earns full marks — but the teacher can&#8217;t see the input — what is actually being assessed? Is the grade measuring the student&#8217;s thinking, or the tool&#8217;s output?</p>
       </div>
     </div>
-    <div class="spotlight-note" style="color:rgba(255,255,255,.85);border-top:1px solid rgba(255,255,255,.15);margin-top:20px;padding-top:16px;">Assessment is designed to measure a student's thinking — not just the accuracy of an answer. Michael's observation surfaces a problem AI makes visible but didn't create. A student might have engineered a precise, thoughtful prompt that reflects genuine understanding. Or they might have typed three words and accepted whatever came back. The output may look identical. The learning isn't. The teacher who graded the AI's work "50 out of 50" didn't have access to the student's input — and that gap is the real dilemma. If the student's input was essentially nothing, then grading the output generously doesn't assess the student at all. It assesses the tool. Which raises the question: <em style="color:white;">were our assessment methods ever actually measuring what we thought they were — AI or not?</em></div>
+    <div class="spotlight-note">Assessment is designed to measure a student&#8217;s thinking — not just the accuracy of an answer. Michael&#8217;s observation surfaces a problem AI makes visible but didn&#8217;t create. A student might have engineered a precise, thoughtful prompt that reflects genuine understanding. Or they might have typed three words and accepted whatever came back. The output may look identical. The learning isn&#8217;t. The teacher who graded the AI&#8217;s work &#8220;50 out of 50&#8221; didn&#8217;t have access to the student&#8217;s input — and that gap is the real dilemma. If the student&#8217;s input was essentially nothing, then grading the output generously doesn&#8217;t assess the student at all. It assesses the tool. Which raises the question: <em style="color:var(--navy);"><strong>in an environment that sees varying levels of AI use, what defines quality work? How can you know?</strong></em></div>
   </div>
 </div>
 
