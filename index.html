@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Classroom at the Crossroads — AI Case Studies</title>
-<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Caveat:wght@400;500;600&family=Spline+Sans:wght@300;400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
   --navy:#0f172a;--slate:#0f1f36;--muted:#0f1f36;--border:#e2e8f0;
@@ -18,13 +18,54 @@ body{background:var(--bg);font-family:"Spline Sans",sans-serif;color:var(--text)
 .fade-in.visible{opacity:1;transform:translateY(0);}
 
 /* HERO */
-.hero{background:var(--navy);padding:72px 60px 64px;position:relative;overflow:hidden;}
-.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:48px 48px;}
+.hero{
+  background:
+    repeating-linear-gradient(91deg, transparent 0, transparent 3px, rgba(0,0,0,0.08) 3px, rgba(0,0,0,0.08) 4px),
+    repeating-linear-gradient(89deg, transparent 0, transparent 11px, rgba(255,255,255,0.035) 11px, rgba(255,255,255,0.035) 12px),
+    linear-gradient(172deg, #c4883e 0%, #8b5626 8%, #b8783a 16%, #9a6530 24%, #c08040 32%, #7d4e22 40%, #b07238 48%, #8a5a2a 56%, #aa6c34 64%, #865226 72%, #be8440 80%, #8b5828 88%, #b47a3c 100%);
+  padding:24px;
+  box-shadow:0 8px 40px rgba(0,0,0,.55), inset 0 0 12px rgba(0,0,0,.3);
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 8% 50%, rgba(0,0,0,.18) 0%, transparent 35%),
+    radial-gradient(ellipse at 92% 50%, rgba(0,0,0,.18) 0%, transparent 35%),
+    radial-gradient(ellipse at 50% 5%, rgba(0,0,0,.12) 0%, transparent 25%),
+    radial-gradient(ellipse at 50% 95%, rgba(0,0,0,.12) 0%, transparent 25%);
+  pointer-events:none;z-index:0;
+}
+.chalkboard-surface{
+  background:
+    repeating-linear-gradient(43deg, transparent 0, transparent 22px, rgba(255,255,255,0.014) 22px, rgba(255,255,255,0.014) 23px),
+    repeating-linear-gradient(-38deg, transparent 0, transparent 30px, rgba(255,255,255,0.009) 30px, rgba(255,255,255,0.009) 31px),
+    radial-gradient(ellipse at 38% 28%, rgba(255,255,255,.14) 0%, rgba(255,255,255,.05) 28%, transparent 58%),
+    radial-gradient(ellipse at 72% 58%, rgba(255,255,255,.08) 0%, transparent 45%),
+    radial-gradient(ellipse at 16% 68%, rgba(255,255,255,.09) 0%, transparent 38%),
+    radial-gradient(ellipse at 88% 18%, rgba(255,255,255,.06) 0%, transparent 32%),
+    linear-gradient(118deg, transparent 12%, rgba(255,255,255,.05) 30%, rgba(255,255,255,.025) 48%, transparent 62%),
+    #2c2c29;
+  padding:72px 60px 64px;
+  position:relative;z-index:1;
+  box-shadow:inset 0 0 55px rgba(0,0,0,.65), inset 0 0 120px rgba(0,0,0,.25);
+}
 .hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:2;}
 .hero-tag{font-family:"Spline Sans Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--jane);margin-bottom:18px;display:block;}
-.hero h1{font-family:"Spline Sans",sans-serif;font-size:50px;line-height:1.1;color:#f8fafc;margin-bottom:18px;letter-spacing:-.02em;}
-.hero h1 em{font-style:italic;color:var(--lily);}
-.hero-desc{font-size:15px;color:#94a3b8;max-width:600px;line-height:1.75;font-weight:300;}
+.hero h1{
+  font-family:"Bangers",cursive;
+  font-size:48px;
+  line-height:1.05;
+  letter-spacing:5px;
+  margin-bottom:18px;
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+  -webkit-text-stroke:1.5px rgba(255,255,255,.85);
+  filter:drop-shadow(2px 2px 0px rgba(255,255,255,.18)) drop-shadow(3px 3px 0px rgba(0,0,0,.3));
+}
+.hero h1 em{font-style:normal;}
+.hero-desc{font-family:"Caveat",cursive;font-size:22px;color:#c8c4b8;max-width:600px;line-height:1.65;font-weight:500;}
 .hero-meta{display:flex;gap:32px;margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);}
 .hero-meta-item{font-family:"Spline Sans Mono",monospace;font-size:10px;color:#64748b;letter-spacing:.08em;text-transform:uppercase;}
 .hero-meta-item strong{display:block;font-size:14px;color:#e2e8f0;font-family:"Spline Sans",sans-serif;font-weight:500;letter-spacing:0;margin-bottom:2px;}
@@ -104,20 +145,21 @@ body{background:var(--bg);font-family:"Spline Sans",sans-serif;color:var(--text)
 .compare-verdict{background:var(--bg);border-top:1px solid var(--border);padding:18px 28px;font-size:13px;color:var(--text2);line-height:1.65;font-style:italic;}
 
 /* SPOTLIGHT */
-.spotlight{background:white;border:2px solid var(--navy);border-radius:14px;padding:36px 40px;position:relative;overflow:hidden;color:var(--navy);}
+.spotlight{background:linear-gradient(135deg,#dce6f0 0%,#e8eff7 40%,#f0f4f8 100%);border-radius:14px;padding:36px 40px;position:relative;overflow:hidden;color:var(--navy);}
 .spotlight::before{content:"";position:absolute;top:-40px;right:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(15,23,42,.05) 0%,transparent 70%);}
 .spotlight-tag{font-family:"Spline Sans Mono",monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--michael);margin-bottom:10px;display:block;position:relative;z-index:2;}
 .spotlight h3{font-family:"Spline Sans",sans-serif;font-size:24px;color:var(--navy);margin-bottom:8px;position:relative;z-index:2;}
 .spotlight-sub{font-size:13px;color:var(--text2);margin-bottom:24px;font-weight:300;max-width:500px;line-height:1.65;position:relative;z-index:2;}
 .spotlight-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;position:relative;z-index:2;}
-.spotlight-item{background:rgba(15,23,42,.05);border:1px solid rgba(15,23,42,.12);border-radius:9px;padding:14px;}
+.spotlight-item-wrap{background:linear-gradient(135deg,#1e3a5f 0%,#2d5a8e 60%,#3a72a8 100%);padding:3px;border-radius:12px;display:flex;flex-direction:column;}
+.spotlight-item{background:white;border-radius:9px;padding:14px;flex:1;}
 .spotlight-item-num{font-family:"Spline Sans Mono",monospace;font-size:20px;font-weight:500;color:var(--michael);margin-bottom:5px;}
 .spotlight-item-title{font-size:13px;font-weight:600;color:var(--navy);margin-bottom:4px;}
 .spotlight-item p{font-size:11px;color:var(--slate);line-height:1.55;}
-.spotlight-note{margin-top:18px;padding-top:16px;border-top:1px solid var(--border);font-size:12px;color:var(--text2);font-style:italic;position:relative;z-index:2;}
+.spotlight-note{background:white;border-radius:9px;padding:16px 20px;font-size:12px;color:var(--text2);font-style:italic;position:relative;z-index:2;flex:1;}
 
 /* FRAMEWORK MAP */
-.framework-map{background:white;border:1px solid var(--border);border-radius:14px;overflow:hidden;}
+.framework-map{background:white;border:1px solid #dde3ec;border-radius:12px;overflow:hidden;}
 .framework-row{display:grid;grid-template-columns:130px 1fr 1fr 1fr;border-bottom:1px solid var(--border);}
 .framework-row:last-child{border-bottom:none;}
 .framework-row.hr{background:linear-gradient(135deg, #070f28 0%, #0D214A 55%, #142e60 100%);}
@@ -134,25 +176,27 @@ body{background:var(--bg);font-family:"Spline Sans",sans-serif;color:var(--text)
 .principle-body{font-size:12px;color:var(--text2);line-height:1.65;}
 
 /* BIG QUESTION */
-.big-question{background:linear-gradient(135deg,#1e3a5f 0%,#2d5a8e 60%,#3a72a8 100%);border-radius:14px;padding:48px 52px;position:relative;overflow:hidden;}
-.big-question::before{content:'"';font-family:"Spline Sans",sans-serif;font-size:220px;color:rgba(255,255,255,.04);position:absolute;top:-40px;left:16px;line-height:1;}
-.bq-tag{font-family:"Spline Sans Mono",monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:white;margin-bottom:14px;display:block;position:relative;z-index:2;}
-.big-question h3{font-family:"Spline Sans",sans-serif;font-size:28px;color:white;line-height:1.25;max-width:700px;margin-bottom:16px;position:relative;z-index:2;}
-.big-question p{font-size:13px;color:white;max-width:640px;line-height:1.75;font-weight:300;position:relative;z-index:2;margin-bottom:12px;}
-.big-question strong{color:white;}
+.big-question{background:white;border-radius:14px;padding:48px 52px;position:relative;overflow:hidden;}
+.big-question::before{content:'"';font-family:"Spline Sans",sans-serif;font-size:220px;color:rgba(30,58,95,.04);position:absolute;top:-40px;left:16px;line-height:1;}
+.bq-tag{font-family:"Spline Sans Mono",monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#1e3a5f;margin-bottom:14px;display:block;position:relative;z-index:2;}
+.big-question h3{font-family:"Spline Sans",sans-serif;font-size:28px;color:var(--navy);line-height:1.25;max-width:700px;margin-bottom:16px;position:relative;z-index:2;}
+.big-question p{font-size:13px;color:#0f1f36;max-width:640px;line-height:1.75;font-weight:300;position:relative;z-index:2;margin-bottom:12px;}
+.big-question strong{color:var(--navy);font-weight:600;}
 .dilemma-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px;position:relative;z-index:2;}
-.dilemma-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:9px;padding:18px 20px;}
-.dilemma-card h4{font-size:16px;font-weight:600;color:white;margin-bottom:7px;}
-.dilemma-card p{font-size:12px;color:white;line-height:1.6;margin:0;}
-.dilemma-card strong{color:white;}
+.dilemma-card-wrap{background:linear-gradient(135deg,#1e3a5f 0%,#2d5a8e 60%,#3a72a8 100%);padding:3px;border-radius:12px;display:flex;flex-direction:column;}
+.dilemma-card{background:linear-gradient(135deg,#eef3f8 0%,#f3f7fb 40%,#f8fafc 100%);border-radius:9px;padding:18px 20px;flex:1;}
+.dilemma-card h4{font-size:16px;font-weight:700;color:#0f172a;margin-bottom:7px;}
+.dilemma-card p{font-size:12px;color:#0f172a;line-height:1.6;margin:0;font-weight:500;}
+.dilemma-card strong{color:#0f172a;font-weight:700;}
 
 /* REFLECTION */
-.reflection-section{background:white;border:1px solid var(--border);border-radius:14px;overflow:hidden;}
+.reflection-section{background:white;border-radius:14px;overflow:hidden;}
 .reflection-header{padding:24px 32px;border-bottom:1px solid var(--border);background:var(--bg);}
 .reflection-header h3{font-family:"Spline Sans",sans-serif;font-size:21px;color:var(--navy);margin-bottom:5px;}
 .reflection-header p{font-size:13px;color:var(--muted);}
-.reflection-item{display:flex;gap:18px;padding:18px 32px;border-bottom:1px solid var(--border);align-items:flex-start;transition:background .2s;}
-.reflection-item:last-child{border-bottom:none;}
+.reflection-item{display:flex;gap:18px;padding:18px 32px;align-items:flex-start;transition:background .2s;position:relative;}
+.reflection-item::after{content:'';position:absolute;bottom:0;left:20px;right:20px;height:2px;background:linear-gradient(90deg,#1e3a5f 0%,#2d5a8e 60%,#3a72a8 100%);}
+.reflection-item:last-child::after{display:none;}
 .reflection-item:hover{background:var(--bg);}
 .rnum{font-family:"Spline Sans Mono",monospace;font-size:11px;color:var(--muted);padding-top:2px;flex-shrink:0;width:26px;}
 .rq{font-size:14px;color:var(--text);line-height:1.6;}
@@ -176,16 +220,58 @@ strong{color:var(--navy);font-weight:500;}
 <body>
 
 <div class="hero">
+  <div class="chalkboard-surface">
   <div class="hero-inner">
-    <span class="hero-tag">Case Studies · AI in the Classroom · Wolf (2024) USF</span>
-    <h1>The Classroom<br/>at the <em>Crossroads</em></h1>
-    <p class="hero-desc">Seven educators. Seven responses to the same disruption. What their experiences reveal about how any professional navigates a tool that arrived before anyone agreed on what to do with it.</p>
-    <div class="hero-meta">
-      <div class="hero-meta-item"><strong>7</strong>Educators Interviewed</div>
-      <div class="hero-meta-item"><strong>Bay Area</strong>High Schools</div>
-      <div class="hero-meta-item"><strong>2024</strong>Master's Thesis, USF</div>
-      <div class="hero-meta-item"><strong>Qualitative</strong>Phenomenological Study</div>
+    <div style="display:flex;align-items:flex-start;gap:48px;">
+      <div style="flex:1;">
+        <span class="hero-tag">Case Studies · AI in the Classroom · Wolf (2024) USF</span>
+        <h1>The Classroom<br/>at the <em>Crossroads</em></h1>
+        <p class="hero-desc">Seven educators. Seven responses to the same disruption. What their experiences reveal about how any professional navigates a tool that arrived before anyone agreed on what to do with it.</p>
+        <div class="hero-meta">
+          <div class="hero-meta-item"><strong>7</strong>Educators Interviewed</div>
+          <div class="hero-meta-item"><strong>Bay Area</strong>High Schools</div>
+          <div class="hero-meta-item"><strong>2024</strong>Master's Thesis, USF</div>
+          <div class="hero-meta-item"><strong>Qualitative</strong>Phenomenological Study</div>
+        </div>
+      </div>
+      <div style="flex-shrink:0;padding-top:16px;">
+        <svg width="165" height="230" viewBox="0 0 165 230" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+          <defs>
+            <linearGradient id="sg-pole" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#606060"/>
+              <stop offset="35%" stop-color="#c4c4c4"/>
+              <stop offset="65%" stop-color="#d4d4d4"/>
+              <stop offset="100%" stop-color="#808080"/>
+            </linearGradient>
+          </defs>
+          <!-- Pole -->
+          <rect x="82" y="18" width="13" height="198" rx="3" fill="url(#sg-pole)"/>
+          <!-- Base -->
+          <rect x="74" y="208" width="29" height="10" rx="3" fill="#888"/>
+          <ellipse cx="88" cy="222" rx="24" ry="7" fill="#777"/>
+          <!-- Bolt connectors -->
+          <circle cx="88" cy="38" r="4" fill="#aaa"/>
+          <circle cx="88" cy="72" r="4" fill="#aaa"/>
+          <circle cx="88" cy="108" r="4" fill="#aaa"/>
+
+          <!-- Sign 1: Amy crimson — TOP, pointing RIGHT -->
+          <polygon points="95,24 95,52 153,52 165,38 153,24" fill="#b31f68"/>
+          <line x1="95" y1="24" x2="153" y2="24" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <rect x="98" y="28" width="42" height="16" rx="2" fill="rgba(255,255,255,0.12)"/>
+
+          <!-- Sign 2: Jim green, pointing LEFT -->
+          <polygon points="6,72 21,57 83,57 83,87 21,87" fill="#20452C"/>
+          <line x1="21" y1="57" x2="83" y2="57" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <rect x="24" y="61" width="44" height="16" rx="2" fill="rgba(255,255,255,0.12)"/>
+
+          <!-- Sign 3: Jane teal, pointing RIGHT -->
+          <polygon points="95,94 95,122 152,122 164,108 152,94" fill="#003c44"/>
+          <line x1="95" y1="94" x2="152" y2="94" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <rect x="98" y="98" width="42" height="16" rx="2" fill="rgba(255,255,255,0.12)"/>
+        </svg>
+      </div>
     </div>
+  </div>
   </div>
 </div>
 
@@ -233,7 +319,7 @@ strong{color:var(--navy);font-weight:500;}
   <div style="border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.05);margin-bottom:28px;">
     <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;">
       <tr valign="top">
-        <td width="200" style="width:200px;min-width:200px;background:linear-gradient(135deg, #0e2318 0%, #20452C 60%, #2c5e3a 100%);padding:16px 12px 16px;text-align:center;border-right:1px solid #e2e8f0;vertical-align:top;border-radius:14px 0 0 14px;position:relative;">
+        <td width="200" style="width:200px;min-width:200px;background:linear-gradient(135deg, #20452C 0%, #eef6f1 50%, #20452C 100%);padding:16px 12px 16px;text-align:center;border-right:1px solid #e2e8f0;vertical-align:top;border-radius:14px 0 0 14px;position:relative;">
           
           <svg width="184" height="60" viewBox="0 0 184 65" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 0 0 0;"><defs><path id="tarc-jim" d="M 6,58 C 40,10 144,10 178,58" fill="none"/></defs><text font-size="24" fill="white" font-family="Spline Sans,sans-serif" font-weight="700" letter-spacing="1"><textPath href="#tarc-jim" startOffset="10%">In</textPath></text><text font-size="24" fill="white" font-family="Spline Sans,sans-serif" font-weight="700" letter-spacing="1"><textPath href="#tarc-jim" startOffset="27%">His</textPath></text><text font-size="24" fill="white" font-family="Spline Sans,sans-serif" font-weight="700" letter-spacing="1"><textPath href="#tarc-jim" startOffset="51%">Words</textPath></text></svg>
           <div style="position:absolute;bottom:6px;left:4px;z-index:2;"><img src="jim.png" style="width:150px;height:auto;display:block;"></div>
@@ -275,7 +361,7 @@ strong{color:var(--navy);font-weight:500;}
   <div style="border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.05);margin-bottom:28px;">
     <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;">
       <tr valign="top">
-        <td width="200" style="width:200px;min-width:200px;background:linear-gradient(135deg, #0a0018 0%, #10002B 60%, #1e0050 100%);padding:16px 12px 16px;text-align:center;border-right:1px solid #e2e8f0;vertical-align:top;border-radius:14px 0 0 14px;position:relative;">
+        <td width="200" style="width:200px;min-width:200px;background:linear-gradient(135deg, #10002B 0%, #f2eeff 50%, #10002B 100%);padding:16px 12px 16px;text-align:center;border-right:1px solid #e2e8f0;vertical-align:top;border-radius:14px 0 0 14px;position:relative;">
           
           <svg width="184" height="60" viewBox="0 0 184 65" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 0 0 0;"><defs><path id="tarc-denise" d="M 6,58 C 40,10 144,10 178,58" fill="none"/></defs><text font-size="24" fill="white" font-family="Spline Sans,sans-serif" font-weight="700" letter-spacing="1"><textPath href="#tarc-denise" startOffset="10%">In</textPath></text><text font-size="24" fill="white" font-family="Spline Sans,sans-serif" font-weight="700" letter-spacing="1"><textPath href="#tarc-denise" startOffset="27%">Her</textPath></text><text font-size="24" fill="white" font-family="Spline Sans,sans-serif" font-weight="700" letter-spacing="1"><textPath href="#tarc-denise" startOffset="51%">Words</textPath></text></svg>
           <div style="position:absolute;bottom:6px;left:4px;z-index:2;"><img src="denise.png" style="width:150px;height:auto;display:block;"></div>
@@ -315,7 +401,7 @@ strong{color:var(--navy);font-weight:500;}
   <div style="border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.05);margin-bottom:28px;">
     <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;">
       <tr valign="top">
-        <td width="200" style="width:200px;min-width:200px;background:linear-gradient(135deg, #001418 0%, #00272B 60%, #003c44 100%);padding:16px 12px 16px;text-align:center;border-right:1px solid #e2e8f0;vertical-align:top;border-radius:14px 0 0 14px;position:relative;">
+        <td width="200" style="width:200px;min-width:200px;background:linear-gradient(135deg, #00272B 0%, #eafafb 50%, #00272B 100%);padding:16px 12px 16px;text-align:center;border-right:1px solid #e2e8f0;vertical-align:top;border-radius:14px 0 0 14px;position:relative;">
           
           <svg width="184" height="60" viewBox="0 0 184 65" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 0 0 0;"><defs><path id="tarc-jane" d="M 6,58 C 40,10 144,10 178,58" fill="none"/></defs><text font-size="24" fill="white" font-family="Spline Sans,sans-serif" font-weight="700" letter-spacing="1"><textPath href="#tarc-jane" startOffset="10%">In</textPath></text><text font-size="24" fill="white" font-family="Spline Sans,sans-serif" font-weight="700" letter-spacing="1"><textPath href="#tarc-jane" startOffset="27%">Her</textPath></text><text font-size="24" fill="white" font-family="Spline Sans,sans-serif" font-weight="700" letter-spacing="1"><textPath href="#tarc-jane" startOffset="51%">Words</textPath></text></svg>
           <div style="position:absolute;bottom:6px;left:4px;z-index:2;"><img src="jane.png" style="width:150px;height:auto;display:block;"></div>
@@ -345,7 +431,7 @@ strong{color:var(--navy);font-weight:500;}
   <div style="border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.05);margin-bottom:28px;">
     <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;">
       <tr valign="top">
-        <td width="200" style="width:200px;min-width:200px;background:linear-gradient(135deg, #000020 0%, #000138 60%, #00025e 100%);padding:16px 12px 16px;text-align:center;border-right:1px solid #e2e8f0;vertical-align:top;border-radius:14px 0 0 14px;position:relative;">
+        <td width="200" style="width:200px;min-width:200px;background:linear-gradient(135deg, #090630 0%, #A0BBD9 50%, #090630 100%);padding:16px 12px 16px;text-align:center;border-right:1px solid #e2e8f0;vertical-align:top;border-radius:14px 0 0 14px;position:relative;">
           
           <svg width="184" height="60" viewBox="0 0 184 65" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 0 0 0;"><defs><path id="tarc-lily" d="M 6,58 C 40,10 144,10 178,58" fill="none"/></defs><text font-size="24" fill="white" font-family="Spline Sans,sans-serif" font-weight="700" letter-spacing="1"><textPath href="#tarc-lily" startOffset="10%">In</textPath></text><text font-size="24" fill="white" font-family="Spline Sans,sans-serif" font-weight="700" letter-spacing="1"><textPath href="#tarc-lily" startOffset="27%">Her</textPath></text><text font-size="24" fill="white" font-family="Spline Sans,sans-serif" font-weight="700" letter-spacing="1"><textPath href="#tarc-lily" startOffset="51%">Words</textPath></text></svg>
           <div style="position:absolute;bottom:6px;left:4px;z-index:2;"><img src="lily.png" style="width:150px;height:auto;display:block;"></div>
@@ -375,7 +461,7 @@ strong{color:var(--navy);font-weight:500;}
   <div style="border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.05);margin-bottom:28px;">
     <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;">
       <tr valign="top">
-        <td width="200" style="width:200px;min-width:200px;background:linear-gradient(135deg, #132438 0%, #1e3a5f 50%, #326096 100%);padding:16px 12px 16px;text-align:center;border-right:1px solid #e2e8f0;vertical-align:top;border-radius:14px 0 0 14px;position:relative;">
+        <td width="200" style="width:200px;min-width:200px;background:linear-gradient(135deg, #1e3a5f 0%, #edf3fb 50%, #1e3a5f 100%);padding:16px 12px 16px;text-align:center;border-right:1px solid #e2e8f0;vertical-align:top;border-radius:14px 0 0 14px;position:relative;">
           
           <svg width="184" height="60" viewBox="0 0 184 65" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 0 0 0;"><defs><path id="tarc-michael" d="M 6,58 C 40,10 144,10 178,58" fill="none"/></defs><text font-size="24" fill="white" font-family="Spline Sans,sans-serif" font-weight="700" letter-spacing="1"><textPath href="#tarc-michael" startOffset="10%">In</textPath></text><text font-size="24" fill="white" font-family="Spline Sans,sans-serif" font-weight="700" letter-spacing="1"><textPath href="#tarc-michael" startOffset="27%">His</textPath></text><text font-size="24" fill="white" font-family="Spline Sans,sans-serif" font-weight="700" letter-spacing="1"><textPath href="#tarc-michael" startOffset="51%">Words</textPath></text></svg>
           <div style="position:absolute;bottom:6px;left:4px;z-index:2;"><img src="michael.png" style="width:150px;height:auto;display:block;"></div>
@@ -406,7 +492,7 @@ strong{color:var(--navy);font-weight:500;}
   <div style="border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.05);margin-bottom:28px;">
     <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;">
       <tr valign="top">
-        <td width="200" style="width:200px;min-width:200px;background:linear-gradient(135deg, #1a1a2c 0%, #2d2d42 55%, #42425C 100%);padding:16px 12px 16px;text-align:center;border-right:1px solid #e2e8f0;vertical-align:top;border-radius:14px 0 0 14px;position:relative;">
+        <td width="200" style="width:200px;min-width:200px;background:linear-gradient(135deg, #2d2d42 0%, #f0f0f8 50%, #2d2d42 100%);padding:16px 12px 16px;text-align:center;border-right:1px solid #e2e8f0;vertical-align:top;border-radius:14px 0 0 14px;position:relative;">
           
           <svg width="184" height="60" viewBox="0 0 184 65" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 0 0 0;"><defs><path id="tarc-calvin" d="M 6,58 C 40,10 144,10 178,58" fill="none"/></defs><text font-size="24" fill="white" font-family="Spline Sans,sans-serif" font-weight="700" letter-spacing="1"><textPath href="#tarc-calvin" startOffset="10%">In</textPath></text><text font-size="24" fill="white" font-family="Spline Sans,sans-serif" font-weight="700" letter-spacing="1"><textPath href="#tarc-calvin" startOffset="27%">His</textPath></text><text font-size="24" fill="white" font-family="Spline Sans,sans-serif" font-weight="700" letter-spacing="1"><textPath href="#tarc-calvin" startOffset="51%">Words</textPath></text></svg>
           <div style="position:absolute;bottom:-10px;left:4px;z-index:2;"><img src="calvin.png" style="width:150px;height:auto;display:block;"></div>
@@ -443,7 +529,7 @@ strong{color:var(--navy);font-weight:500;}
   <div style="border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.05);margin-bottom:28px;">
     <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;">
       <tr valign="top">
-        <td width="200" style="width:200px;min-width:200px;background:linear-gradient(135deg, #7a0f45 0%, #b31f68 55%, #ec4899 100%);padding:16px 12px 16px;text-align:center;border-right:1px solid #e2e8f0;vertical-align:top;border-radius:14px 0 0 14px;position:relative;">
+        <td width="200" style="width:200px;min-width:200px;background:linear-gradient(135deg, #b31f68 0%, #fef0f8 50%, #b31f68 100%);padding:16px 12px 16px;text-align:center;border-right:1px solid #e2e8f0;vertical-align:top;border-radius:14px 0 0 14px;position:relative;">
           
           <svg width="184" height="60" viewBox="0 0 184 65" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 0 0 0;"><defs><path id="tarc-amy" d="M 6,58 C 40,10 144,10 178,58" fill="none"/></defs><text font-size="24" fill="white" font-family="Spline Sans,sans-serif" font-weight="700" letter-spacing="1"><textPath href="#tarc-amy" startOffset="10%">In</textPath></text><text font-size="24" fill="white" font-family="Spline Sans,sans-serif" font-weight="700" letter-spacing="1"><textPath href="#tarc-amy" startOffset="27%">Her</textPath></text><text font-size="24" fill="white" font-family="Spline Sans,sans-serif" font-weight="700" letter-spacing="1"><textPath href="#tarc-amy" startOffset="51%">Words</textPath></text></svg>
           <div style="position:absolute;bottom:6px;left:4px;z-index:2;"><img src="amy.png" style="width:100px;height:auto;display:block;margin:0 0 0 4px;"></div>
@@ -536,31 +622,41 @@ strong{color:var(--navy);font-weight:500;}
   <span class="section-label" style="color:var(--muted);">Spotlight</span>
   <h2 class="section-title" style="color:var(--navy);">Michael&#8217;s Philosophy — Meet Them Where They Are</h2>
   <p class="section-sub" style="color:var(--text2);">Michael&#8217;s approach as a teacher-coach is worth examining separately. It&#8217;s the one most directly applicable to anyone trying to help others navigate AI in a wide variety of professional settings with different audiences.</p>
-  <div class="spotlight fade-in">
+  <div style="background:linear-gradient(135deg,#1e3a5f 0%,#2d5a8e 60%,#3a72a8 100%);padding:5px;border-radius:19px;" class="fade-in">
+  <div class="spotlight">
     <span class="spotlight-tag">The Coach Model</span>
     <h3>Don&#8217;t Impose a New Framework — Surface the One They Already Have</h3>
     <p class="spotlight-sub">With 20 years of experience, Michael had developed a specific way of working with teachers that mirrors what the best AI adoption looks like in any organization. He wasn&#8217;t trying to revolutionize anyone&#8217;s practice. He was helping them see what they already did well and point it in a slightly better direction.</p>
     <div class="spotlight-grid">
+      <div class="spotlight-item-wrap">
       <div class="spotlight-item">
         <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:6px;display:block;"><circle cx="16" cy="16" r="15" fill="none" stroke="#0f172a" stroke-width="2"/><text x="16" y="22" font-family="Spline Sans,sans-serif" font-size="16" font-weight="700" fill="#0f172a" text-anchor="middle">1</text></svg>
         <div class="spotlight-item-title">Start with existing practice</div>
         <p>He observed what teachers already did and named what was working. No new systems required before you begin. &#8220;A lot of the practices they&#8217;re already doing.&#8221;</p>
         <p style="font-size:13px;font-weight:700;color:#0f172a;line-height:1.55;margin-top:10px;">What is 1 thing that you are <em>already doing</em> in your regular workflow that bogs you down?</p>
       </div>
+      </div>
+      <div class="spotlight-item-wrap">
       <div class="spotlight-item">
         <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:6px;display:block;"><circle cx="16" cy="16" r="15" fill="none" stroke="#0f172a" stroke-width="2"/><text x="16" y="22" font-family="Spline Sans,sans-serif" font-size="16" font-weight="700" fill="#0f172a" text-anchor="middle">2</text></svg>
         <div class="spotlight-item-title">Make direct connections</div>
         <p>&#8220;I just have to point out what they&#8217;re doing to each other.&#8221; He didn&#8217;t lecture. He reflected back what was already visible, and connected it to the shifting landscape around them.</p>
         <p style="font-size:13px;font-weight:700;color:#0f172a;line-height:1.55;margin-top:10px;">Try to make your own connection. Close your eyes and visualize each step of that workflow. Can you imagine any scenario where incorporating AI somewhere — in any capacity, at any point — might improve the process?</p>
       </div>
+      </div>
+      <div class="spotlight-item-wrap">
       <div class="spotlight-item">
         <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:6px;display:block;"><circle cx="16" cy="16" r="15" fill="none" stroke="#0f172a" stroke-width="2"/><text x="16" y="22" font-family="Spline Sans,sans-serif" font-size="16" font-weight="700" fill="#0f172a" text-anchor="middle">3</text></svg>
         <div class="spotlight-item-title">Sit with Michael&#8217;s question</div>
         <p>If a student uses AI and the output earns full marks — but the teacher can&#8217;t see the input — what is actually being assessed? Is the grade measuring the student&#8217;s thinking, or the tool&#8217;s output?</p>
         <p style="font-size:13px;font-weight:700;color:#0f172a;line-height:1.55;margin-top:10px;">Ask yourself: what is my role in this workflow? Which tasks require me and my unique skills?</p>
       </div>
+      </div>
     </div>
-    <div class="spotlight-note">Assessment is designed to measure a student&#8217;s thinking — not just the accuracy of an answer. Michael&#8217;s observation surfaces a problem AI makes visible but didn&#8217;t create. A student might have engineered a precise, thoughtful prompt that reflects genuine understanding. Or they might have typed three words and accepted whatever came back. The output may look identical. The learning isn&#8217;t. The teacher who graded the AI&#8217;s work &#8220;50 out of 50&#8221; didn&#8217;t have access to the student&#8217;s input — and that gap is the real dilemma. If the student&#8217;s input was essentially nothing, then grading the output generously doesn&#8217;t assess the student at all. It assesses the tool. Which raises the question: <em style="color:var(--navy);"><strong>in an environment that sees varying levels of AI use, what defines quality work? How can you know?</strong></em></div>
+    <div class="spotlight-item-wrap" style="margin-top:14px;">
+    <div class="spotlight-note" style="margin-top:0;">Assessment is designed to measure a student&#8217;s thinking — not just the accuracy of an answer. Michael&#8217;s observation surfaces a problem AI makes visible but didn&#8217;t create. A student might have engineered a precise, thoughtful prompt that reflects genuine understanding. Or they might have typed three words and accepted whatever came back. The output may look identical. The learning isn&#8217;t. The teacher who graded the AI&#8217;s work &#8220;50 out of 50&#8221; didn&#8217;t have access to the student&#8217;s input — and that gap is the real dilemma. If the student&#8217;s input was essentially nothing, then grading the output generously doesn&#8217;t assess the student at all. It assesses the tool. Which raises the question: <em style="color:var(--navy);"><strong>in an environment that sees varying levels of AI use, what defines quality work? How can you know?</strong></em></div>
+    </div>
+  </div>
   </div>
 </div>
 
@@ -569,8 +665,10 @@ strong{color:var(--navy);font-weight:500;}
 <div class="section">
   <span class="section-label">Framework</span>
   <h2 class="section-title">Mapping the Teachers</h2>
-  <p class="section-sub">Every teacher's position maps onto a recognizable pattern. These aren't judgments — they're descriptions of where each person's current relationship with the tool sits.</p>
-  <div class="framework-map fade-in">
+  <div style="background:linear-gradient(135deg,#1e3a5f 0%,#2d5a8e 60%,#3a72a8 100%);padding:5px;border-radius:22px;" class="fade-in">
+  <div style="background:linear-gradient(135deg,#dce6f0 0%,#e8eff7 40%,#f0f4f8 100%);border-radius:18px;padding:20px;">
+  <p style="font-family:'Spline Sans',sans-serif;font-size:14px;color:#0f172a;line-height:1.7;font-weight:400;margin-bottom:16px;">Every teacher's position maps onto a recognizable pattern. These aren't judgments — they're descriptions of where each person's current relationship with the tool sits.</p>
+  <div class="framework-map">
     <div class="framework-row hr">
       <div class="framework-cell">Teacher</div>
       <div class="framework-cell">Their Relationship to AI</div>
@@ -585,6 +683,8 @@ strong{color:var(--navy);font-weight:500;}
     <div class="framework-row"><div class="framework-cell"><span class="tdot" style="background:#2d2d42;"></span><strong>Calvin</strong></div><div class="framework-cell" style="color:#1e293b;">Limited experience and understanding</div><div class="framework-cell">Has the right infrastructure; lacks personal tool experience</div><div class="framework-cell">Is this sustainable?</div></div>
     <div class="framework-row"><div class="framework-cell"><span class="tdot" style="background:#b31f68;"></span><strong>Amy</strong></div><div class="framework-cell" style="color:#1e293b;">Non-intersecting</div><div class="framework-cell">AI doesn't touch the problem she's actually solving</div><div class="framework-cell">Might I have any blind spots about indirect ways AI might affect me — now or in the future?</div></div>
   </div>
+  </div>
+  </div>
 </div>
 
 
@@ -593,35 +693,43 @@ strong{color:var(--navy);font-weight:500;}
 <div class="divider"></div>
 
 <div class="section">
-  <div class="big-question fade-in">
+  <div style="background:linear-gradient(135deg,#1e3a5f 0%,#2d5a8e 60%,#3a72a8 100%);padding:5px;border-radius:19px;" class="fade-in">
+  <div class="big-question">
     <div style="display:flex;align-items:flex-start;gap:40px;">
       <div style="flex:1;">
         <span class="bq-tag">The Hard Question</span>
         <h3>What if you understand all of this — and you still don't want to use it?</h3>
         <p>This isn't a hypothetical. Environmental concerns are real and documented. Societal concerns are real and documented. The feeling of not wanting to participate in something you find problematic — even if you benefit from it — is legitimate and worth taking seriously.</p>
-        <p>But here's the tension the case studies surface: <strong style="color:white;">is it increasingly necessary for professionals themselves to develop AI fluency in order to continue doing their jobs effectively as things change around them?</strong> And if the answer is yes — what do you do when your personal values say no?</p>
+        <p>But here's the tension the case studies surface: <strong>is it increasingly necessary for professionals themselves to develop AI fluency in order to continue doing their jobs effectively as things change around them?</strong> And if the answer is yes — what do you do when your personal values say no?</p>
       </div>
-      <div style="flex-shrink:0;display:flex;align-items:center;justify-content:center;padding-top:8px;position:relative;">
-        <img src="thinking icon.png" style="width:180px;height:auto;filter:invert(1) contrast(2);mix-blend-mode:screen;opacity:0.9;-webkit-mask-image:radial-gradient(ellipse 90% 90% at 50% 45%, black 60%, transparent 90%);mask-image:radial-gradient(ellipse 90% 90% at 50% 45%, black 60%, transparent 90%);">
-      </div>
+      <div style="flex-shrink:0;width:175px;"></div>
     </div>
     <div class="dilemma-grid">
+      <div class="dilemma-card-wrap">
       <div class="dilemma-card">
         <h4>Calvin's Dilemma: A Scenario</h4>
         <p>Imagine Calvin not just uncertain — but <strong>actively opposed to AI on principle.</strong> He still teaches law. His students still prepare for a world where AI is standard in legal practice. He still has the preparation gap. His personal objection doesn't change what his students need or what his classroom requires. Further inaction in a rapidly changing environment will only widen the gap between Calvin's methods and his students'. The paralysis we observed gets harder, not easier, when the resistance is intentional rather than circumstantial. <strong>Consider:</strong> being fluent in a different language wouldn't change your nationality — but it would change your ability to reach people, and likely your overall perspective on communication. AI fluency works the same way.</p>
       </div>
+      </div>
+      <div class="dilemma-card-wrap">
       <div class="dilemma-card">
         <h4>The Minimum Effective Dose Question</h4>
         <p>Everyone has a minimum effective dose — and context shapes what that looks like. Calvin's situation and Amy's sit at opposite ends of this: AI simply doesn't intersect Amy's students' developmental needs, so her dose is effectively zero. Calvin's students are heading into a profession where AI is already standard practice — his dose looks very different. The case studies suggest Calvin's path forward doesn't require enthusiastic adoption. It requires enough personal experience to know what skilled use looks like in his domain. Building one legal argument using AI wouldn't make him an AI advocate. It would give him the evaluative capacity to recognize the difference between a student who prepared deeply and one who avoided thinking. That's a much lower bar than endorsement.</p>
       </div>
+      </div>
+      <div class="dilemma-card-wrap">
       <div class="dilemma-card">
         <h4>Purposeful vs. Shallow — A Frame for the Reluctant</h4>
         <p>The distinction between shallow and purposeful use isn't just for enthusiasts. For someone with genuine objections, it might be <strong>the most useful frame of all.</strong> It creates space to say: I'm not going to use this casually or habitually. But I will <strong>use it in specific contexts,</strong> where it genuinely changes what I can do. That's not hypocrisy. That's a considered position — and it's really no different from the cost analysis your brain inherently runs in every decision you make. Real costs, real benefits, deliberate choice.</p>
       </div>
+      </div>
+      <div class="dilemma-card-wrap">
       <div class="dilemma-card">
         <h4>The Question No One Asks Directly</h4>
         <p>At what point does not engaging with a tool that your field, your students, or your colleagues are all using become its own kind of professional choice with its own consequences? This isn't a question with a clean answer — context, role, and timing all shape what it actually means for any individual. But it's worth deeply examining your own relationship with the tool.</p>
       </div>
+      </div>
+    </div>
     </div>
   </div>
 </div>
@@ -632,7 +740,8 @@ strong{color:var(--navy);font-weight:500;}
   <span class="section-label">For Your Consideration</span>
   <h2 class="section-title">Reflection Questions</h2>
   <p class="section-sub">No conclusions, no recommendations. Questions grounded in what the seven teachers experienced — and what they might surface about your own current position.</p>
-  <div class="reflection-section fade-in">
+  <div style="background:linear-gradient(135deg,#1e3a5f 0%,#2d5a8e 60%,#3a72a8 100%);padding:5px;border-radius:19px;" class="fade-in">
+  <div class="reflection-section">
     <div class="reflection-header">
       <h3>Seven Questions for Seven Cases</h3>
       <p>Each one is rooted in a specific teacher's experience. Each one is also asking about you.</p>
@@ -646,6 +755,7 @@ strong{color:var(--navy);font-weight:500;}
       <div class="reflection-item"><div class="rnum">Q6</div><div class="rq">The study found that teachers who adapted best to AI had already built authentic, process-based cultures <strong>before AI arrived.</strong> What parts of your own work are genuinely AI-proof — not because AI is banned, but because the work requires you to actually be present in it?<em>What parts aren't?</em></div></div>
       <div class="reflection-item"><div class="rnum">Q7</div><div class="rq">If someone who knew nothing about AI watched how you interact with it in your actual daily work — or watched you avoid it — what would they conclude about your relationship with the tool?<em>Is that the relationship you actually want to have with it?</em></div></div>
     </div>
+  </div>
   </div>
 </div>
 
