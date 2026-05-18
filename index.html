@@ -224,8 +224,8 @@ strong{color:var(--navy);font-weight:500;}
 .reflect-sub{font-size:14px;color:#0f1f36;line-height:1.7;font-weight:500;margin:0;}
 
 /* QUESTION BOX ROWS — stretch so boxes match height */
-.q-row{display:flex;flex-direction:row;flex-wrap:nowrap;gap:14px;align-items:stretch;}
-.q-row > div{flex:1;min-width:0;}
+.q-row{display:flex;gap:14px;align-items:stretch;}
+.q-row > div{flex:1;}
 </style>
 </head>
 <body>
@@ -351,7 +351,7 @@ strong{color:var(--navy);font-weight:500;}
       <div class="reflect-heading" style="color:#010F01;">Reflection</div>
     </div>
     <div style="background:linear-gradient(135deg, #3d6b48 0%, #f0f7f2 50%, #3d6b48 100%);border-top:2px solid #2d5c3a;padding:16px 24px 20px;">
-      <div class="q-row">
+      <div class="q-row" style="flex-direction:column;">
         <div style="background:white;border:2.5px solid #010F01;border-radius:10px;padding:16px;">
           <svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:10px;display:block;"><circle cx="14" cy="14" r="14" fill="#010F01"/><text x="14" y="20" font-family="Spline Sans,sans-serif" font-size="16" font-weight="700" fill="white" text-anchor="middle">?</text></svg>
           <div style="border-left:3px solid #010F01;background:rgba(0,0,0,.025);padding:10px 14px;border-radius:0 8px 8px 0;margin-bottom:12px;">
