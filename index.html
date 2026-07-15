@@ -230,6 +230,83 @@ strong{color:var(--navy);font-weight:500;}
 /* QUESTION BOX ROWS — stretch so boxes match height */
 .q-row{display:flex;gap:14px;align-items:stretch;}
 .q-row > div{flex:1;}
+
+/* ============ RESPONSIVE / MOBILE ============ */
+img{max-width:100%;}
+
+@media (max-width:768px){
+  html,body{overflow-x:hidden;}
+
+  /* HERO */
+  .hero{padding:14px;}
+  .chalkboard-surface{padding:34px 20px 30px;}
+  .hero-row{flex-direction:column;gap:22px;}
+  .hero-row > div:last-child{align-self:center;padding-top:0 !important;}
+  .hero h1{font-size:30px;letter-spacing:2px;}
+  .hero-desc{font-size:18px;}
+  .hero-meta{gap:16px 22px;flex-wrap:wrap;margin-top:22px;}
+
+  /* SECTIONS */
+  .section{padding:38px 18px;}
+  .section-title{font-size:24px;}
+  .divider{margin:0 18px;}
+
+  /* TEACHER CARDS — break the fixed-width table into stacked blocks */
+  .teacher-grid table,
+  .teacher-grid tbody,
+  .teacher-grid tr,
+  .teacher-grid td{display:block;width:100% !important;}
+  .teacher-grid td[width="200"]{
+    min-width:0 !important;min-height:190px;
+    border-right:none !important;border-bottom:1px solid #e2e8f0;
+    border-radius:14px 14px 0 0 !important;
+  }
+  .teacher-grid td[style*="background:white"]{padding:20px 18px !important;border-left:none !important;}
+  .card-head{flex-direction:column;}
+  .card-head .teacher-badge{align-self:flex-start;}
+
+  /* Reflection question rows stack */
+  .q-row{flex-direction:column;}
+
+  /* COMPARE */
+  .compare-teachers{flex-direction:column;min-height:0 !important;}
+  .compare-teachers > div[style*="width:1px"]{width:100% !important;height:1px !important;}
+  .compare-teachers > div{padding:18px 20px !important;}
+  .compare-teachers span{font-size:34px !important;}
+  .compare-teachers img{height:96px !important;}
+  .compare-body{grid-template-columns:1fr;}
+  .compare-col{padding:18px 20px;}
+  .compare-col:first-child{border-right:none;border-bottom:2px solid rgba(30,58,95,.15);}
+
+  /* SPOTLIGHT */
+  .spotlight{padding:24px 20px;}
+  .spotlight-head{flex-direction:column;}
+  .spotlight-head > img{width:130px !important;}
+  .spotlight h3{font-size:20px;}
+  .spotlight-grid{grid-template-columns:1fr;}
+
+  /* FRAMEWORK MAP — stack rows into readable cards */
+  .framework-row{grid-template-columns:1fr;}
+  .framework-row.hr{display:none;}
+  .framework-cell{border-right:none;}
+
+  /* BIG QUESTION */
+  .big-question{padding:28px 22px;}
+  .big-question h3{font-size:22px;}
+  .bq-row{flex-direction:column;gap:0;}
+  .bq-row > div[style*="width:175px"]{display:none;}
+  .dilemma-grid{grid-template-columns:1fr;}
+
+  /* PRINCIPLES (if present) */
+  .principles-grid{grid-template-columns:1fr;}
+
+  /* REFLECTION */
+  .reflection-header{padding:20px 20px;}
+  .reflection-item{padding:16px 20px;gap:14px;}
+
+  /* FOOTER */
+  .footer{flex-direction:column;gap:10px;text-align:center;padding:22px 20px;}
+}
 </style>
 </head>
 <body>
@@ -237,7 +314,7 @@ strong{color:var(--navy);font-weight:500;}
 <div class="hero">
   <div class="chalkboard-surface">
   <div class="hero-inner">
-    <div style="display:flex;align-items:flex-start;gap:48px;">
+    <div class="hero-row" style="display:flex;align-items:flex-start;gap:48px;">
       <div style="flex:1;">
         <span class="hero-tag">Case Studies · AI in the Classroom · Wolf (2024) USF</span>
         <h1>The Classroom<br/>at the <em>Crossroads</em></h1>
@@ -343,7 +420,7 @@ strong{color:var(--navy);font-weight:500;}
           <div style="position:absolute;bottom:0px;left:-8px;z-index:2;"><img src="jim.png" style="width:150px;height:auto;display:block;"></div>
         </td>
         <td style="padding:24px 28px;vertical-align:top;background:white;">
-          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;">
+          <div class="card-head" style="display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;">
             <div style="flex:1;border-left:3px solid #2E0010;background:rgba(0,0,0,.025);padding:10px 14px;border-radius:0 8px 8px 0;">
               <p style="font-family:'Spline Sans',sans-serif;font-size:13px;font-weight:600;color:#1e293b;line-height:1.6;margin:0;">Jim sees the shift happening but doubles down on enforcement, despite predicting it won't hold.</p>
             </div>
@@ -388,7 +465,7 @@ strong{color:var(--navy);font-weight:500;}
           <div style="position:absolute;bottom:0px;left:-12px;z-index:2;"><img src="denise.png" style="width:150px;height:auto;display:block;"></div>
         </td>
         <td style="padding:24px 28px;vertical-align:top;background:white;">
-          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;">
+          <div class="card-head" style="display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;">
             <div style="flex:1;border-left:3px solid #10002B;background:rgba(0,0,0,.025);padding:10px 14px;border-radius:0 8px 8px 0;">
               <p style="font-family:'Spline Sans',sans-serif;font-size:13px;font-weight:600;color:#1e293b;line-height:1.6;margin:0;">Denise feels AI undermines the core skill she&#8217;s working to develop — though she has used it effectively herself.</p>
             </div>
@@ -431,7 +508,7 @@ strong{color:var(--navy);font-weight:500;}
           <div style="position:absolute;bottom:-18px;left:-18px;z-index:2;"><img src="jane.png" style="width:150px;height:auto;display:block;"></div>
         </td>
         <td style="padding:24px 28px;vertical-align:top;background:white;">
-          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;">
+          <div class="card-head" style="display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;">
             <div style="flex:1;border-left:3px solid #00272B;background:rgba(0,0,0,.025);padding:10px 14px;border-radius:0 8px 8px 0;">
               <p style="font-family:'Spline Sans',sans-serif;font-size:13px;font-weight:600;color:#1e293b;line-height:1.6;margin:0;">Jane treats AI as just the latest thing to channel thoughtfully, not a crisis to manage.</p>
             </div>
@@ -464,7 +541,7 @@ strong{color:var(--navy);font-weight:500;}
           <div style="position:absolute;bottom:1px;left:-17px;z-index:2;"><img src="lily.png" style="width:150px;height:auto;display:block;"></div>
         </td>
         <td style="padding:24px 28px;vertical-align:top;background:white;">
-          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;">
+          <div class="card-head" style="display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;">
             <div style="flex:1;border-left:3px solid #000138;background:rgba(0,0,0,.025);padding:10px 14px;border-radius:0 8px 8px 0;">
               <p style="font-family:'Spline Sans',sans-serif;font-size:13px;font-weight:600;color:#1e293b;line-height:1.6;margin:0;">Lily accepts AI is in her students' hands and builds a practical strategy around that reality.</p>
             </div>
@@ -497,7 +574,7 @@ strong{color:var(--navy);font-weight:500;}
           <div style="position:absolute;bottom:0px;left:1px;z-index:2;"><img src="michael.png" style="width:150px;height:auto;display:block;"></div>
         </td>
         <td style="padding:24px 28px;vertical-align:top;background:white;">
-          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;">
+          <div class="card-head" style="display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;">
             <div style="flex:1;border-left:3px solid #326096;background:rgba(0,0,0,.025);padding:10px 14px;border-radius:0 8px 8px 0;">
               <p style="font-family:'Spline Sans',sans-serif;font-size:13px;font-weight:600;color:#1e293b;line-height:1.6;margin:0;">Michael believes his teachers have more of the answer than they think — his job is just to surface it.</p>
             </div>
@@ -531,7 +608,7 @@ strong{color:var(--navy);font-weight:500;}
           <div style="position:absolute;bottom:-12px;left:-15px;z-index:2;"><img src="calvin.png" style="width:120px;height:auto;display:block;"></div>
         </td>
         <td style="padding:24px 28px;vertical-align:top;background:white;">
-          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;">
+          <div class="card-head" style="display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;">
             <div style="flex:1;border-left:3px solid #42425C;background:rgba(0,0,0,.025);padding:10px 14px;border-radius:0 8px 8px 0;">
               <p style="font-family:'Spline Sans',sans-serif;font-size:13px;font-weight:600;color:#1e293b;line-height:1.6;margin:0;">Calvin feels he lacks enough personal experience with AI to make a defensible policy decision.</p>
             </div>
@@ -546,7 +623,7 @@ strong{color:var(--navy);font-weight:500;}
       <p class="reflect-sub">Calvin admitted that there is a widening gap between his students&#8217; methods and his own, mentioning that he was <em>&#8220;reluctant to engage with the use of LLMs proactively.&#8221;</em></p>
     </div>
     <div style="background:linear-gradient(135deg, #484862 0%, #a8a8c0 50%, #484862 100%);border-top:2px solid #3d3d58;padding:16px 24px 20px;">
-      <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+      <div class="q-row" style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
         <div style="flex:1;background:white;border:2.5px solid #2D2D40;border-radius:10px;padding:16px;"><svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:8px;display:block;"><circle cx="14" cy="14" r="14" fill="#42425C"/><text x="14" y="20" font-family="Spline Sans,sans-serif" font-size="16" font-weight="700" fill="white" text-anchor="middle">?</text></svg><p style="font-size:11px;font-weight:700;color:#000000;line-height:1.55;margin:0;">Do you think Calvin is satisfied with keeping things status quo for the foreseeable future? What advice would you give to him?</p></div>
         <div style="flex:1;background:white;border:2.5px solid #2D2D40;border-radius:10px;padding:16px;"><svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:8px;display:block;"><circle cx="14" cy="14" r="14" fill="#42425C"/><text x="14" y="20" font-family="Spline Sans,sans-serif" font-size="16" font-weight="700" fill="white" text-anchor="middle">?</text></svg><p style="font-size:11px;font-weight:700;color:#000000;line-height:1.55;margin:0;">Long-term, what effects might come from Calvin not proactively engaging with the tool as AI evolves and new innovations emerge?</p></div>
       </div>
@@ -571,7 +648,7 @@ strong{color:var(--navy);font-weight:500;}
           <div style="position:absolute;bottom:-3px;left:4px;z-index:2;"><img src="amy.png" style="width:100px;height:auto;display:block;margin:0 0 0 4px;"></div>
         </td>
         <td style="padding:24px 28px;vertical-align:top;background:white;">
-          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;">
+          <div class="card-head" style="display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;">
             <div style="flex:1;border-left:3px solid #ec4899;background:rgba(0,0,0,.025);padding:10px 14px;border-radius:0 8px 8px 0;">
               <p style="font-family:'Spline Sans',sans-serif;font-size:13px;font-weight:600;color:#1e293b;line-height:1.6;margin:0;">Amy's students have different developmental priorities entirely — the AI question simply doesn't intersect her work.</p>
             </div>
@@ -605,7 +682,7 @@ strong{color:var(--navy);font-weight:500;}
   <div style="background:linear-gradient(135deg,#1e3a5f 0%,#2d5a8e 60%,#3a72a8 100%);padding:5px;border-radius:19px;" class="fade-in">
   <div class="compare-panel">
     <div class="compare-header" style="padding:0;">
-      <div style="display:flex;align-items:stretch;min-height:180px;">
+      <div class="compare-teachers" style="display:flex;align-items:stretch;min-height:180px;">
         <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:22px;padding:24px 30px;">
           <img src="jim.png" style="height:140px;width:auto;border-radius:8px;flex-shrink:0;">
           <span style="font-family:'Spline Sans',sans-serif;font-size:46px;font-weight:700;color:white;letter-spacing:-.02em;line-height:1;">Jim</span>
@@ -658,7 +735,7 @@ strong{color:var(--navy);font-weight:500;}
   <p class="section-sub" style="color:var(--text2);">Michael&#8217;s approach as a teacher-coach is worth examining separately. It&#8217;s the one most directly applicable to anyone trying to help others navigate AI in a wide variety of professional settings with different audiences.</p>
   <div style="background:linear-gradient(135deg,#1e3a5f 0%,#2d5a8e 60%,#3a72a8 100%);padding:5px;border-radius:19px;" class="fade-in">
   <div class="spotlight">
-    <div style="display:flex;align-items:flex-start;gap:20px;margin-bottom:4px;">
+    <div class="spotlight-head" style="display:flex;align-items:flex-start;gap:20px;margin-bottom:4px;">
       <img src="michael.png" style="width:175px;height:auto;flex-shrink:0;border-radius:10px;margin-top:4px;">
       <div style="flex:1;">
         <span class="spotlight-tag">The Coach Model</span>
@@ -734,7 +811,7 @@ strong{color:var(--navy);font-weight:500;}
 <div class="section">
   <div style="background:linear-gradient(135deg,#1e3a5f 0%,#2d5a8e 60%,#3a72a8 100%);padding:5px;border-radius:19px;" class="fade-in">
   <div class="big-question">
-    <div style="display:flex;align-items:flex-start;gap:40px;">
+    <div class="bq-row" style="display:flex;align-items:flex-start;gap:40px;">
       <div style="flex:1;">
         <span class="bq-tag">The Hard Question</span>
         <h3>What if you understand all of this — and you still don't want to use it?</h3>
